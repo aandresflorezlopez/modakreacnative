@@ -1,5 +1,5 @@
-const app = () => {
-  const redux = undefined;
-};
+const app = () => ({
+  firebase: undefined
+});
 
-export default app;
+export default app();

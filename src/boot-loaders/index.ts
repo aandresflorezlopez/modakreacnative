@@ -1,3 +1,3 @@
-import reduxLoader from '../boot-loaders/redux-loader';
+import firebaseLoader from '../boot-loaders/firebase.loader';
 
-export default [reduxLoader];
+export default [firebaseLoader];
