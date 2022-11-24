@@ -73,16 +73,62 @@ TODO:
 
 To run the project you need a created firebase database in the firebase console <a href="https://firebase.google.com/docs/database">link</a>. For testing you can use the following database:
 
-`apiKey: 'AIzaSyCK9SB3SkFz58c_J59MCm34zDAsqcR3FDg'`
-`authDomain: 'modak-ffa97.firebaseapp.com'`
-`databaseURL: 'https://modak-ffa97-default-rtdb.firebaseio.com'`
-`projectId: 'modak-ffa97'`
-`storageBucket: 'modak-ffa97.appspot.com'`
-`messagingSenderId: '807642683127'`
-`appId: '1:807642683127:web:b16d82ad4d4c07c606a5f2'`
-`measurementId: 'G-E6RH3437VC'`
-`name: 'name'`
-`options: {}`
-`automaticDataCollectionEnabled: true`
+```
+export const firebase = {
+  apiKey: 'AIzaSyCK9SB3SkFz58c_J59MCm34zDAsqcR3FDg',
+  authDomain: 'modak-ffa97.firebaseapp.com',
+  databaseURL: 'https://modak-ffa97-default-rtdb.firebaseio.com',
+  projectId: 'modak-ffa97',
+  storageBucket: 'modak-ffa97.appspot.com',
+  messagingSenderId: '807642683127',
+  appId: '1:807642683127:web:b16d82ad4d4c07c606a5f2',
+  measurementId: 'G-E6RH3437VC',
+  name: 'name',
+  options: {},
+  automaticDataCollectionEnabled: true
+};
+```
 
 use the above information to create the database.
+
+<!-- Getting Started -->
+
+## :toolbox: Getting Started
+
+<!-- Run Locally -->
+
+### :running: Run Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:aandresflorezlopez/modakreacnative.git
+```
+
+Go to the project directory
+
+```bash
+  cd modakreacnative
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run ios
+```
+
+<!-- Running Tests -->
+
+### :test_tube: Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
