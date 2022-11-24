@@ -4,6 +4,9 @@ export type Article = {
   smallDescription: string;
   description: string;
   image_id: string;
+  api_link: string;
+  publication_history: string;
+  credit_line: string;
 };
 
 type Pagination = {

@@ -18,11 +18,9 @@ import app from './src/lib/app';
 
 // functional requirements
 /**
- * 1. List of art wokr with { thumbnail, small_desription, }
- * 2. detail Art work page { main_image, description, author, ...details }
- * 3. get favorite
- * 4. remove favorite
- *
+ * refresh
+ * detail
+ * remove dtos and styles
  */
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -55,7 +53,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name={Routes.ArticleList} component={ButtonNavigator} />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name={Routes.ArticleList}
+          component={ButtonNavigator}
+        />
         <Stack.Screen name={Routes.ArticleDetail} component={ArticleDetail} />
       </Stack.Navigator>
     </NavigationContainer>

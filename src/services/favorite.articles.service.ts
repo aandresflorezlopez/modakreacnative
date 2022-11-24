@@ -1,11 +1,7 @@
-import { Articles as ArticlesDTO } from '../dtos/item.dto';
-import { ArticleResponse as ArticleDTO } from '../dtos/item.dto';
-
-import app from '../lib/app';
-
 import { getDatabase, ref, update, remove, child, get } from 'firebase/database';
 
 import { FavoriteArticle } from '../views/article.detail';
+import Articles from './articles.service';
 
 const FavoriteArticles = {
   addOne: async ({ articleId, deviceId, title }: FavoriteArticle): Promise<void> => {
@@ -29,7 +25,10 @@ const FavoriteArticles = {
   getAll: async (deviceId: string): Promise<any> => {
     try {
       const db = getDatabase();
-      return get(child(ref(db), deviceId));
+      const articleIds = Object.keys((await get(child(ref(db), deviceId))).val());
+      const params = 'ids=' + articleIds.join(',');
+      const articles = await Articles.getAll(params);
+      return articles;
     } catch (e) {
       throw new Error('no content');
     }

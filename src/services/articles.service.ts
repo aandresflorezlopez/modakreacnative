@@ -4,9 +4,9 @@ import { ArticleResponse as ArticleDTO } from '../dtos/item.dto';
 const BASE_URL = 'https://api.artic.edu/api/v1/';
 
 const Articles = {
-  getAll: async (): Promise<ArticlesDTO> => {
+  getAll: async (params: string = ''): Promise<ArticlesDTO> => {
     try {
-      const res = await fetch(`${BASE_URL}artworks`);
+      const res = await fetch(`${BASE_URL}artworks?${params}`);
       return res.json() as unknown as ArticlesDTO;
     } catch (e) {
       throw new Error('no content');

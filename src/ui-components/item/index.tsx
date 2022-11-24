@@ -1,10 +1,8 @@
 import React from 'react';
-import { Text, Image } from 'react-native';
 import { Article as ArticleDto } from '../../dtos/item.dto';
-import { TouchableOpacityItem, ImageThumbnail } from './styles';
 import { useNavigation } from '@react-navigation/native';
 
-import styled from 'styled-components/native';
+import { ListItem, Avatar } from '@react-native-material/core';
 
 type ItemProps = {
   data: ArticleDto;
@@ -19,12 +17,13 @@ const Item = ({ data }: ItemProps) => {
   };
 
   return (
-    <TouchableOpacityItem onPress={onDetail}>
-      <ImageThumbnail source={{ uri: thumbnail }} />
-      <Text>{data.id}</Text>
-      <Text>{data.title}</Text>
-      <Text>{data.smallDescription}</Text>
-    </TouchableOpacityItem>
+    <ListItem
+      leadingMode="avatar"
+      leading={<Avatar image={{ uri: thumbnail }} />}
+      title={data.title}
+      secondaryText={data.title}
+      onPress={onDetail}
+    />
   );
 };
 

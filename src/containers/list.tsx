@@ -12,17 +12,18 @@ interface ListProps {
 const List = ({ items }: ListProps) => {
   const onOpenItemDetail = () => {};
 
-  const renderItem: ListRenderItem<ArticleDto> = ({ item }) => <ItemComponent data={item} />;
+  const renderItem: ListRenderItem<ArticleDto> = ({ item }) => (
+    <ItemComponent data={item} />
+  );
 
   return (
     <SafeAreaView
-      style={{ flex: 20, justifyContent: 'center', alignContent: 'center', padding: 10, backgroundColor: 'green' }}
+      style={{ flex: 20, justifyContent: 'center', alignContent: 'center', padding: 10 }}
     >
       <FlatList
         data={items}
         renderItem={renderItem}
         keyExtractor={(item: ArticleDto) => item.id}
-        contentContainerStyle={{ backgroundColor: 'red' }}
       />
     </SafeAreaView>
   );

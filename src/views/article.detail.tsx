@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { View, Text, TouchableOpacity, Button } from 'react-native';
+import { ScrollView, SafeAreaView } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
+
+import {
+  ListItem,
+  Avatar,
+  Text,
+  VStack,
+  Stack,
+  Button
+} from '@react-native-material/core';
 
 // components
 import Loader from '../ui-components/loader';
@@ -13,10 +22,6 @@ import FavoriteArticles from '../../src/services/favorite.articles.service';
 import { ArticleResponse } from '../../src/dtos/item.dto';
 
 import app from '../lib/app';
-
-type ArticleDetailProps = {
-  favorite: boolean;
-};
 
 type ParamList = {
   Detail: {
@@ -30,7 +35,7 @@ export type FavoriteArticle = {
   title: string;
 };
 
-const ArticleDetail = ({ favorite }: ArticleDetailProps) => {
+const ArticleDetail = ({}) => {
   const [article, setArticle] = useState<ArticleResponse>();
   const [isFetchingData, setFetchingState] = useState<boolean>(true);
 
@@ -62,36 +67,44 @@ const ArticleDetail = ({ favorite }: ArticleDetailProps) => {
     FavoriteArticles.addOne(favoriteArticle);
   };
 
-  const removeItem = () => {};
-
   const renderFavoriteButtton = () => {
-    const { data } = article;
-    if (favorite) {
-      return (
-        <Button
-          onPress={removeItem}
-          title="Remove me, sure?"
-          color="#841584"
-          accessibilityLabel="Remove me, sure?"
-        />
-      );
-    }
     return (
-      <Button
-        onPress={addItem}
-        title="Add me, please!"
-        color="#841584"
-        accessibilityLabel="Add me, please!"
-      />
+      <Stack fill center spacing={4}>
+        <Button
+          style={{ marginVertical: 40 }}
+          title="Add me, please! Fav"
+          onPress={addItem}
+        />
+      </Stack>
     );
   };
 
   if (article && article.data) {
+    const image = `https://www.artic.edu/iiif/2/${article.data.image_id}/full/843,/0/default.jpg`;
     return (
-      <View>
-        <Text>Detail: --- {article.data.title}</Text>
-        {renderFavoriteButtton()}
-      </View>
+      <SafeAreaView>
+        <VStack m={4} spacing={2}>
+          <ScrollView
+            style={{
+              paddingTop: 10,
+              backgroundColor: 'white',
+              paddingBottom: 50,
+              paddingHorizontal: 20
+            }}
+          >
+            <Text variant="h3">{article.data.title}</Text>
+            <ListItem
+              title={`Credit line: ${article.data.title}`}
+              secondaryText={`See more: ${article.data.title}`}
+            />
+            {/* Image */}
+            <Text variant="body1">
+              {article.data.publication_history.slice(0, 1000)} ...
+            </Text>
+            {renderFavoriteButtton()}
+          </ScrollView>
+        </VStack>
+      </SafeAreaView>
     );
   }
 };
