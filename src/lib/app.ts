@@ -1,5 +1,6 @@
 const app = () => ({
-  firebase: undefined
+  firebase: undefined,
+  uniqueIdentifier: undefined
 });
 
 export default app();

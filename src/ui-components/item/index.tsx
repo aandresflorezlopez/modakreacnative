@@ -6,7 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 
 type ItemProps = {
   data: ArticleDto;
-  // onOpenItemDetail: () => void;
 };
 
 const Item = ({ data }: ItemProps) => {

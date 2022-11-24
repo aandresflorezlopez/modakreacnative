@@ -29,7 +29,8 @@
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.3.6",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "expo-device": "~4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
