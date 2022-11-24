@@ -3,8 +3,7 @@ export type Article = {
   title: string;
   smallDescription: string;
   description: string;
-  thumbnailPath: string;
-  mainImagePath: string;
+  image_id: string;
 };
 
 type Pagination = {

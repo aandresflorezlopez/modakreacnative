@@ -8,10 +8,10 @@ import { getDatabase, ref, update, remove, child, get } from 'firebase/database'
 import { FavoriteArticle } from '../views/article.detail';
 
 const FavoriteArticles = {
-  db: getDatabase(),
   addOne: async ({ articleId, deviceId, title }: FavoriteArticle): Promise<void> => {
     try {
-      update(ref(FavoriteArticles.db, deviceId), {
+      const db = getDatabase();
+      update(ref(db, deviceId), {
         [articleId]: title
       });
     } catch (e) {
@@ -20,14 +20,16 @@ const FavoriteArticles = {
   },
   removeOneById: async ({ articleId, deviceId }): Promise<void> => {
     try {
-      remove(ref(FavoriteArticles.db, deviceId + [articleId]));
+      const db = getDatabase();
+      remove(ref(db, deviceId + [articleId]));
     } catch (e) {
       throw new Error('no content');
     }
   },
   getAll: async (deviceId: string): Promise<any> => {
     try {
-      return get(child(ref(FavoriteArticles.db), deviceId));
+      const db = getDatabase();
+      return get(child(ref(db), deviceId));
     } catch (e) {
       throw new Error('no content');
     }

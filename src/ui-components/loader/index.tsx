@@ -1,14 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { View, Image, Animated } from 'react-native';
-import styled from 'styled-components/native';
+import { Animated } from 'react-native';
 
-const ImageLoader = styled.Image`
-  paddingtop: 10em;
-  pagging: 20em;
-  height: 50px;
-  width: 50px;
-  backgroundcolor: green;
-`;
+import { ImageLoader } from './styles';
 
 const Loader = () => {
   const fadeAnim = useRef(new Animated.Value(0)).current;

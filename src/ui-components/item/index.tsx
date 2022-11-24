@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
 import { Article as ArticleDto } from '../../dtos/item.dto';
-import { TouchableOpacityItem } from './styles';
+import { TouchableOpacityItem, ImageThumbnail } from './styles';
 import { useNavigation } from '@react-navigation/native';
+
+import styled from 'styled-components/native';
 
 type ItemProps = {
   data: ArticleDto;
@@ -10,6 +12,7 @@ type ItemProps = {
 
 const Item = ({ data }: ItemProps) => {
   const navigation = useNavigation();
+  const thumbnail = `https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg`;
 
   const onDetail = () => {
     navigation.navigate('Detail', { articleId: data.id });
@@ -17,8 +20,9 @@ const Item = ({ data }: ItemProps) => {
 
   return (
     <TouchableOpacityItem onPress={onDetail}>
+      <ImageThumbnail source={{ uri: thumbnail }} />
       <Text>{data.id}</Text>
-      <Text>{data.description}</Text>
+      <Text>{data.title}</Text>
       <Text>{data.smallDescription}</Text>
     </TouchableOpacityItem>
   );
