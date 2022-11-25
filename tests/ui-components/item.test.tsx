@@ -1,18 +1,7 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import Item from '../../src/ui-components/item';
 
-jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => ({
-    navigation: {
-      navigate: jest.fn()
-    }
-  })
-}));
-
-test('form submits two answers', async () => {
-  const allQuestions = ['q1', 'q2'];
-  const mockFn = jest.fn();
-
+test('renders Item commponent correctly', async () => {
   const mockedItem = {
     id: 'item-id',
     title: 'Title',

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`form submits two answers 1`] = `
+exports[`renders Item commponent correctly 1`] = `
 <View
   accessible={true}
   collapsable={false}
