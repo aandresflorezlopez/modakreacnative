@@ -3,18 +3,14 @@ import { SafeAreaView, FlatList, ListRenderItem, View, Text } from 'react-native
 
 import ItemComponent from '../ui-components/item';
 
-import { Article as ArticleDto } from '../dtos/item.dto';
+import { Article } from '../dtos/article.dto';
 
 interface ListProps {
-  items: ArticleDto[];
+  items: Article[];
 }
 
 const List = ({ items }: ListProps) => {
-  const onOpenItemDetail = () => {};
-
-  const renderItem: ListRenderItem<ArticleDto> = ({ item }) => (
-    <ItemComponent data={item} />
-  );
+  const renderItem: ListRenderItem<Article> = ({ item }) => <ItemComponent data={item} />;
 
   return (
     <SafeAreaView
@@ -23,7 +19,7 @@ const List = ({ items }: ListProps) => {
       <FlatList
         data={items}
         renderItem={renderItem}
-        keyExtractor={(item: ArticleDto) => item.id}
+        keyExtractor={(item: Article) => item.id}
       />
     </SafeAreaView>
   );

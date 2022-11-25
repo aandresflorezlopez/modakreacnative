@@ -13,15 +13,9 @@ import bootLoaders from './src/boot-loaders';
 
 // app
 import app from './src/lib/app';
+import { Routes } from './src/dtos/routes.dto';
+import Loader from './src/ui-components/loader';
 
-//  5. test
-
-// functional requirements
-/**
- * refresh
- * detail
- * remove dtos and styles
- */
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -34,12 +28,6 @@ const ButtonNavigator = () => {
   );
 };
 
-enum Routes {
-  ArticleList = 'Article list',
-  ArticleDetail = 'Detail',
-  FavoriteArticleList = 'Favorite article list'
-}
-
 const App = () => {
   const [isBooting, setBootState] = useState<boolean>(true);
 
@@ -49,6 +37,10 @@ const App = () => {
       setBootState(false);
     });
   }, [isBooting]);
+
+  if (isBooting) {
+    <Loader />;
+  }
 
   return (
     <NavigationContainer>

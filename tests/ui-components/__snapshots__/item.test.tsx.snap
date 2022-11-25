@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`form submits two answers 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onLayout={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "#ffffff",
+    }
+  }
+>
+  <View
+    style={
+      [
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        {
+          "backgroundColor": "transparent",
+        },
+        {
+          "transition": "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "marginVertical": 12,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "height": 56,
+          "justifyContent": "center",
+          "marginStart": 16,
+          "width": 56,
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": "#03DAC6",
+              "borderRadius": 28,
+              "height": 56,
+              "width": 56,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Image
+            source={
+              {
+                "uri": "https://www.artic.edu/iiif/2/image_id/full/843,/0/default.jpg",
+              }
+            }
+            style={
+              [
+                {
+                  "borderRadius": 28,
+                  "height": 56,
+                  "width": 56,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "flex": 1,
+          "marginHorizontal": 16,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          selectable={false}
+          style={
+            [
+              {
+                "fontSize": 16,
+                "letterSpacing": 0.15,
+              },
+              {
+                "color": "#000000",
+              },
+              {
+                "color": "#212121",
+              },
+            ]
+          }
+        >
+          Title
+        </Text>
+      </View>
+      <Text
+        selectable={false}
+        style={
+          [
+            {
+              "fontSize": 14,
+              "letterSpacing": 0.25,
+            },
+            {
+              "color": "#000000",
+            },
+            {
+              "color": "#666666",
+              "marginTop": 4,
+            },
+          ]
+        }
+      >
+        Title
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#00000014",
+          "height": 1,
+          "marginEnd": undefined,
+          "marginStart": 88,
+        },
+        undefined,
+      ]
+    }
+  />
+</View>
+`;

@@ -26,9 +26,13 @@ const FavoriteArticles = {
     try {
       const db = getDatabase();
       const articleIds = Object.keys((await get(child(ref(db), deviceId))).val());
-      const params = 'ids=' + articleIds.join(',');
-      const articles = await Articles.getAll(params);
-      return articles;
+
+      if (articleIds) {
+        const params = 'ids=' + articleIds.join(',');
+        const articles = await Articles.getAll(params);
+        return articles;
+      }
+      return [];
     } catch (e) {
       throw new Error('no content');
     }

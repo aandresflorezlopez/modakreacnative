@@ -6,7 +6,7 @@ import List from '../../src/containers/list';
 import Loader from '../ui-components/loader';
 
 import ArticlesService from '../../src/services/articles.service';
-import { Article as ArticleDto, ArticleResponse } from '../../src/dtos/item.dto';
+import { Article as ArticleDto, ArticleResponse } from '../dtos/article.dto';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState<ArticleDto[]>([]);

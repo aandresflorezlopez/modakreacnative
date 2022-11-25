@@ -1,8 +1,6 @@
 export type Article = {
   id: string;
   title: string;
-  smallDescription: string;
-  description: string;
   image_id: string;
   api_link: string;
   publication_history: string;
@@ -25,4 +23,10 @@ export type Articles = {
 
 export type ArticleResponse = {
   data: Article;
+};
+
+export type FavoriteArticle = {
+  deviceId: string;
+  articleId: string;
+  title: string;
 };

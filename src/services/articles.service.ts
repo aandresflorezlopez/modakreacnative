@@ -1,5 +1,5 @@
-import { Articles as ArticlesDTO } from '../dtos/item.dto';
-import { ArticleResponse as ArticleDTO } from '../dtos/item.dto';
+import { Articles as ArticlesDTO } from '../dtos/article.dto';
+import { ArticleResponse as ArticleDTO } from '../dtos/article.dto';
 
 const BASE_URL = 'https://api.artic.edu/api/v1/';
 

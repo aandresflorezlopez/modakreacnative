@@ -19,7 +19,7 @@ import Loader from '../ui-components/loader';
 import ArticlesService from '../../src/services/articles.service';
 import FavoriteArticles from '../../src/services/favorite.articles.service';
 
-import { ArticleResponse } from '../../src/dtos/item.dto';
+import { ArticleResponse, FavoriteArticle } from '../dtos/article.dto';
 
 import app from '../lib/app';
 
@@ -27,12 +27,6 @@ type ParamList = {
   Detail: {
     articleId: number;
   };
-};
-
-export type FavoriteArticle = {
-  deviceId: string;
-  articleId: string;
-  title: string;
 };
 
 const ArticleDetail = ({}) => {
