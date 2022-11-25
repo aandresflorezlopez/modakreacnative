@@ -31,35 +31,3 @@ exports[`[Article detail] no renders article detail correctly 1`] = `
   />
 </View>
 `;
-
-exports[`[Article detail] renders article detail correctly 1`] = `
-<View
-  collapsable={false}
-  style={
-    {
-      "alignSelf": "center",
-      "flex": 1,
-      "justifyContent": "center",
-      "opacity": 0,
-    }
-  }
->
-  <Image
-    source={
-      {
-        "testUri": "../../../assets/waiting.png",
-      }
-    }
-    style={
-      [
-        {
-          "height": 50,
-          "paddingtop": "10em",
-          "pagging": "20em",
-          "width": 50,
-        },
-      ]
-    }
-  />
-</View>
-`;
