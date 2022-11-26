@@ -1,6 +1,6 @@
 import { getDatabase, ref, update, remove, child, get } from 'firebase/database';
 
-import { FavoriteArticle } from '../views/article.detail';
+import { FavoriteArticle } from '../dtos/article.dto';
 import Articles from './articles.service';
 
 const FavoriteArticles = {
